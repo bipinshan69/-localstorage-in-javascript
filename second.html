@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <center>
+  <br>
+  <form action="dashboard.html" onsubmit="onFormSubmit();">
+   Welcome ..... <span id="result"></span><br>
+   <div id="save">
+   Username : <span id="username" name="username"></span> <br>
+   EmailID : <span id="email" name="email"></span> <br>
+   Password : <span id="password" name="password"></span> <br>
+   </div>
+   <input type="submit" name="submit" value="Submit">
+ </form>
+<script >
+  document.getElementById("result").innerHTML=localStorage.getItem("textvalue");
+  var temp1=localStorage.getItem("username").split(",");
+  var temp2=localStorage.getItem("email").split(",");
+  var temp3=localStorage.getItem("password").split(",");
+  document.getElementById("username").innerHTML=temp1[temp1.length-1];
+  document.getElementById("email").innerHTML=temp2[temp1.length-1];
+  document.getElementById("password").innerHTML=temp3[temp1.length-1];
+</script>
+</center>
+<script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <center>
+    Welcome to Dashboard Page
+  <br>
+ <table align="center" class="list" id="userList">
+   <thead>
+     <tr>
+       <th>Username</th>
+       <th>EmailID</th>
+       <th>Password</th>
+     </tr>
+   </thead>
+   <tbody>
+   
+   </tbody>
+ </table>
+   .
+</center>
+</body>
+<script type="text/javascript">
+  var temp_user_names = localStorage.getItem("username");
+  var user_names = [];
+  user_names = temp_user_names.split(",");
+  var temp_emails = localStorage.getItem("email");
+  var user_emails = [];
+  user_emails=temp_emails.split(",");
+
+  var temp_pass = localStorage.getItem("password");
+  var user_pass = [];
+  user_pass=temp_pass.split(",");
+
+  var table = document.getElementById("userList");
+  for (var i = 0; i <user_names.length; i++){
+    var tr = document.createElement('tr');   
+
+    var td1 = document.createElement('td');
+    var td2 = document.createElement('td');
+    var td3 = document.createElement('td');
+
+    var username = document.createTextNode(user_names[i]);
+    var email = document.createTextNode(user_emails[i]);
+    var password = document.createTextNode(user_pass[i]);
+
+    td1.appendChild(username);
+    td2.appendChild(email);
+    td3.appendChild(password);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    table.appendChild(tr);
+}
+</script>
+</html>
